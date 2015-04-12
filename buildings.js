@@ -46,3 +46,16 @@ exports.skyscraper = function(numFloors, options) {
   // Make the roof
   drone.box(options.floor, options.width, 1, options.length)
 }
+
+exports.lamp = function(height) {
+  var drone = new Drone(self)
+
+  drone
+    .up()
+    .box(blocks.fence.birch, 1, height, 1)
+    .up(height - 1)
+    .back()
+    .box(blocks.fence.birch)
+    .down()
+    .box(blocks.glowstone)
+}
